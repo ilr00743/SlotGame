@@ -12,8 +12,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ba15db7e97c4177b66e4bcc167c28c3, type: 3}
   m_Name: PaylineConfig
   m_EditorClassIdentifier: 
-  Rows: 3
-  Columns: 5
-  Paylines:
-  - name: Payline 1
-  - name: Payline 2
+  _rows: 3
+  _columns: 5
+  _paylines:
+  - name: Horizontal 1 Row
+    LineColor: {r: 0.9245283, g: 0.07413671, b: 0.07413671, a: 1}
+    serializedPositions: 010101010100000000000000000000
+    rows: 3
+    columns: 5
+  - name: Horizontal 2 Row
+    LineColor: {r: 0.5660378, g: 0.32306874, b: 0.32306874, a: 0}
+    serializedPositions: 000000000000000000000000000000
+    rows: 3
+    columns: 5
+  - name: Horizontal 3 Row
+    LineColor: {r: 0, g: 0, b: 0, a: 0}
+    serializedPositions: 000000000000000000000000000000
+    rows: 3
+    columns: 5
+  - name: V Line
+    LineColor: {r: 0, g: 0, b: 0, a: 0}
+    serializedPositions: 000000000000000000000000000000
+    rows: 3
+    columns: 5
+  - name: Reverse V Line
+    LineColor: {r: 0, g: 0, b: 0, a: 0}
+    serializedPositions: 000000000000000000000000000000
+    rows: 3
+    columns: 5
+  - name: ZigZag 1
+    LineColor: {r: 0, g: 0, b: 0, a: 0}
+    serializedPositions: 000000000000000000000000000000
+    rows: 3
+    columns: 5
