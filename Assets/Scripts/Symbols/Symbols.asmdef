@@ -1,3 +1,4 @@
 {
-	"name": "Symbols"
+	"name": "Symbols",
+	"references":[ "AYellowpaper.SerializedCollections" ]
 }

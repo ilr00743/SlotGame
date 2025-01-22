@@ -1,3 +1,16 @@
 {
-	"name": "Paylines"
+    "name": "Paylines",
+    "rootNamespace": "",
+    "references": [
+        "GUID:07e5097c1dd1b4149aaa97396641d886"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

@@ -15,37 +15,37 @@ MonoBehaviour:
   _symbols:
   - _name: A
     _icon: {fileID: 1337533158, guid: f2b02b8bf5fb4f843aee2d11744bde40, type: 3}
-    _weight: 0
+    _weight: 10
   - _name: K
     _icon: {fileID: -1776547823, guid: f2b02b8bf5fb4f843aee2d11744bde40, type: 3}
-    _weight: 0
+    _weight: 15
   - _name: Q
     _icon: {fileID: -1057337709, guid: f2b02b8bf5fb4f843aee2d11744bde40, type: 3}
-    _weight: 0
+    _weight: 14
   - _name: J
     _icon: {fileID: 373760414, guid: f2b02b8bf5fb4f843aee2d11744bde40, type: 3}
-    _weight: 0
+    _weight: 20
   - _name: 7
     _icon: {fileID: 1493798554, guid: f2b02b8bf5fb4f843aee2d11744bde40, type: 3}
-    _weight: 0
+    _weight: 25
   - _name: 10
     _icon: {fileID: -2038751738, guid: f2b02b8bf5fb4f843aee2d11744bde40, type: 3}
-    _weight: 0
+    _weight: 14
   - _name: Diamond
     _icon: {fileID: -1092125066, guid: f2b02b8bf5fb4f843aee2d11744bde40, type: 3}
-    _weight: 0
+    _weight: 5
   - _name: Heart
     _icon: {fileID: 989381288, guid: f2b02b8bf5fb4f843aee2d11744bde40, type: 3}
-    _weight: 0
+    _weight: 8
   - _name: Club
     _icon: {fileID: 1916044305, guid: f2b02b8bf5fb4f843aee2d11744bde40, type: 3}
-    _weight: 0
+    _weight: 12
   - _name: Spade
     _icon: {fileID: -1931524556, guid: f2b02b8bf5fb4f843aee2d11744bde40, type: 3}
-    _weight: 0
+    _weight: 4
   - _name: Dollar
     _icon: {fileID: 1012027942, guid: f2b02b8bf5fb4f843aee2d11744bde40, type: 3}
-    _weight: 0
+    _weight: 30
   - _name: Star
     _icon: {fileID: 1493798554, guid: f2b02b8bf5fb4f843aee2d11744bde40, type: 3}
-    _weight: 0
+    _weight: 3
