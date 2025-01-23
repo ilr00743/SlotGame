@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Utils;
 
 [Serializable]
 public class Payline : ISerializationCallbackReceiver
@@ -14,8 +15,8 @@ public class Payline : ISerializationCallbackReceiver
     [SerializeField] private List<bool> _serializedPositions = new List<bool>();
     [SerializeField] private int rows;
     [SerializeField] private int columns;
-    
 
+    public bool[,] PositionsArray => ListUtils.NestedListsToArray(Positions);
     public void OnBeforeSerialize()
     {
         _serializedPositions.Clear();

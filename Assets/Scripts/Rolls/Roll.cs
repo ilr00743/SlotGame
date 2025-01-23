@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using DG.Tweening;
 using Symbols;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -15,7 +11,6 @@ namespace Rolls
         [SerializeField] private SymbolsConfig _symbolsConfig;
         [SerializeField] private SymbolView _symbolPrefab;
         [SerializeField] private Transform _reelBottomBoundary;
-        [SerializeField] private Transform _reelTopBoundary;
         [SerializeField] private float _itemYPosition;
 
         private List<SymbolView> _symbols;
@@ -90,6 +85,7 @@ namespace Rolls
         private void GenerateNewSymbol(SymbolView symbolView)
         {
             var randomSymbolFromConfig = _symbolsConfig.Symbols[Random.Range(0, _symbolsConfig.Symbols.Count)];
+            
             symbolView.Initialize(randomSymbolFromConfig.Name, randomSymbolFromConfig.Icon);
         }
 
@@ -113,12 +109,13 @@ namespace Rolls
 
         public List<SymbolView> GetLastThreeSymbols()
         {
-            for (int i = 2; i >= 0; i--)
+            var list = new List<SymbolView>();
+
+            for (var i = 2; i >= 0; i--)
             {
-                Debug.Log($"{_symbols[i].name}");
+                list.Add(_symbols[i]);
             }
-            
-            return _symbols.TakeLast(3).ToList();
+            return list;
         }
 
         private void AlignSymbols()

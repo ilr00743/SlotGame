@@ -5,7 +5,7 @@ namespace Symbols
 {
     public class SymbolView : MonoBehaviour
     {
-        private string _name;
+        public string Name { get; private set; }
         private SpriteRenderer _spriteRenderer;
         [SerializeField] private int _index;
 
@@ -13,7 +13,7 @@ namespace Symbols
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
             
-            _name = symbolName;
+            Name = symbolName;
             _spriteRenderer.sprite = sprite;
         }
         
@@ -21,7 +21,7 @@ namespace Symbols
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
             
-            _name = symbolName;
+            Name = symbolName;
             _spriteRenderer.sprite = sprite;
             _index = index;
         }
