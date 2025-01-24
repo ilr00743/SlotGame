@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using Utils;
 
+// It should implement ISerializationCallbackReceiver
+// because without him list of bool values always resets after editing of PaylineConfigEditor.cs
+
 [Serializable]
 public class Payline : ISerializationCallbackReceiver
 {
+    [SerializeField] private List<bool> _serializedPositions = new List<bool>();
+    [SerializeField] private int rows;
+    [SerializeField] private int columns;
+    
     public string Name;
     public Color LineColor = Color.white;
     public bool IsExpanded = true;
 
     [NonSerialized] public List<List<bool>> Positions = new List<List<bool>>();
-
-    [SerializeField] private List<bool> _serializedPositions = new List<bool>();
-    [SerializeField] private int rows;
-    [SerializeField] private int columns;
 
     public bool[,] PositionsArray => ListUtils.NestedListsToArray(Positions);
     public void OnBeforeSerialize()

@@ -15,39 +15,39 @@ MonoBehaviour:
   _rows: 3
   _columns: 5
   _payLines:
-  - Name: Horizontal 1
+  - _serializedPositions: 010101010100000000000000000000
+    rows: 3
+    columns: 5
+    Name: Horizontal 1
     LineColor: {r: 1, g: 1, b: 1, a: 1}
     IsExpanded: 0
-    _serializedPositions: 010101010100000000000000000000
+  - _serializedPositions: 000000000001010101010000000000
     rows: 3
     columns: 5
-  - Name: Horizontal 2
+    Name: Horizontal 2
+    LineColor: {r: 0.32495826, g: 0.7924528, b: 0.22801706, a: 1}
+    IsExpanded: 0
+  - _serializedPositions: 000000000000000000000101010101
+    rows: 3
+    columns: 5
+    Name: Horizontal 3
+    LineColor: {r: 0.6981132, g: 0.08805445, b: 0.07573871, a: 1}
+    IsExpanded: 0
+  - _serializedPositions: 010000000100010001000000010000
+    rows: 3
+    columns: 5
+    Name: V Line
+    LineColor: {r: 0.06732824, g: 0.47703147, b: 0.8396226, a: 1}
+    IsExpanded: 0
+  - _serializedPositions: 000001000000010001000100000001
+    rows: 3
+    columns: 5
+    Name: Reverse V Line
     LineColor: {r: 1, g: 1, b: 1, a: 1}
     IsExpanded: 0
-    _serializedPositions: 000000000001010101010000000000
+  - _serializedPositions: 000000000000010001000100010001
     rows: 3
     columns: 5
-  - Name: Horizontal 3
-    LineColor: {r: 1, g: 1, b: 1, a: 1}
+    Name: ZigZag 1
+    LineColor: {r: 0.8584906, g: 0.8402553, b: 0.09313814, a: 1}
     IsExpanded: 0
-    _serializedPositions: 000000000000000000000101010101
-    rows: 3
-    columns: 5
-  - Name: V Line
-    LineColor: {r: 1, g: 1, b: 1, a: 1}
-    IsExpanded: 1
-    _serializedPositions: 010000000100010001000000010000
-    rows: 3
-    columns: 5
-  - Name: Reverse V Line
-    LineColor: {r: 1, g: 1, b: 1, a: 1}
-    IsExpanded: 0
-    _serializedPositions: 000001000000010001000100000001
-    rows: 3
-    columns: 5
-  - Name: ZigZag 1
-    LineColor: {r: 1, g: 1, b: 1, a: 1}
-    IsExpanded: 1
-    _serializedPositions: 000000000000010001000100010001
-    rows: 3
-    columns: 5

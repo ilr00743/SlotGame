@@ -5,9 +5,9 @@ namespace Paylines
 {
     public class PaylineChecker
     {
-        public (SymbolView? symbol, int matches) GetPaylineMatches(SymbolView[,] reels, bool[,] payline)
+        public (SymbolView symbol, int matches) GetPaylineMatches(SymbolView[,] reels, bool[,] payline)
         {
-            SymbolView? firstSymbol = null;
+            SymbolView firstSymbol = null;
             int matches = 0;
 
             int rows = payline.GetLength(0);
