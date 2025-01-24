@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Paylines;
+﻿using System;
+using System.Collections.Generic;
 using Symbols;
 
 namespace Payout
@@ -12,15 +12,15 @@ namespace Payout
         {
             _symbolsConfig = symbolsConfig;
         }
-
-        public float CalculateTotalPayout(SymbolView[,] reels, List<Payline> activePaylines, int betPerLine)
+        
+        public float CalculateTotalPayout(List<(SymbolView, int)> symbolMatchesList, int betPerLine)
         {
             float totalPayout = 0;
 
-            foreach (var payline in activePaylines)
+            foreach (var symbolMatches in symbolMatchesList)
             {
-                PaylineChecker paylineChecker = new PaylineChecker();
-                var (symbolView, matches) = paylineChecker.GetPaylineMatches(reels, payline.PositionsArray);
+                var symbolView = symbolMatches.Item1;
+                var matches = symbolMatches.Item2;
 
                 if (symbolView != null && matches > 0)
                 {
@@ -39,5 +39,4 @@ namespace Payout
             return rate * betPerLine;
         }
     }
-
 }
