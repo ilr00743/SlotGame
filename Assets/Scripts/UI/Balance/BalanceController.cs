@@ -13,6 +13,8 @@ namespace UI.Balance
             _balanceView = balanceView;
         }
 
+        public float Balance => _balanceModel.CurrentBalance;
+
         public void UpdateBalanceView()
         {
             _balanceView.UpdateBalance(_balanceModel.CurrentBalance);
