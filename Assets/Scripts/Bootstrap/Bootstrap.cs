@@ -33,6 +33,8 @@ namespace Bootstrap
 
         private async void Start()
         {
+            Application.targetFrameRate = 60;
+            
             _loadingScreen = Instantiate(_loadingScreen);
 
             await InitializeGameAsync();
@@ -55,7 +57,7 @@ namespace Bootstrap
             var totalPayoutView = Instantiate(_totalPayoutViewPrefab, levelUI.transform);
             var totalPayoutController = new TotalPayoutController(totalPayoutModel, totalPayoutView);
 
-            var balanceModel = new BalanceModel(currentBalance: 100);
+            var balanceModel = new BalanceModel(currentBalance: 1000);
             var balanceView = Instantiate(_balanceViewPrefab, levelUI.transform);
             var balanceController = new BalanceController(balanceModel, balanceView);
             

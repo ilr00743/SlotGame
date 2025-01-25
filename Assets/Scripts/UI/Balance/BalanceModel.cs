@@ -2,11 +2,17 @@
 {
     public class BalanceModel
     {
-        public float CurrentBalance { get; set; }
+        private float _currentBalance;
+        
+        public float CurrentBalance
+        {
+            get => _currentBalance;
+            set => _currentBalance = value > 0 ? value : 0;
+        }
 
         public BalanceModel(float currentBalance)
         {
-            CurrentBalance = currentBalance;
+            _currentBalance = currentBalance;
         }
     }
 }
