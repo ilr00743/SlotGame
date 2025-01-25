@@ -19,10 +19,11 @@ The prototype of slot machine
 4. Or go to Build Settings and select platform that you want.
 5. Click on "Build" button.
 ````
-Simple explaining
+## Simple rule explaining
 - One bet = chance to get one specific pay line combination
 - With each next bet you increse amount of probable pay line combinations (bigger bet = bigger chance to win more money = also bigger chance to lose more money :) )
 - Each symbol has multipliers for 3,4 and 5 same symbols in a row or diagonal or zig-zag (my implementation provides easy configuration of pay lines)
+- The payout is made for all paylines that can occur in one spin. That is, if two combinations come up, the payout is for two combinations. 
   
 ## Demo
 (The identic symbols just for testing)
