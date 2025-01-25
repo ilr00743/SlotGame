@@ -8,11 +8,6 @@ namespace UI.Balance
     {
         [SerializeField] private TextMeshProUGUI _balance;
 
-        private void Start()
-        {
-            _balance.text = "$1000";
-        }
-
         public void UpdateBalance(float value)
         {
             _balance.text = value.ToString("$0.0");

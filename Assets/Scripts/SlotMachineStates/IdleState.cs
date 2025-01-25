@@ -6,16 +6,14 @@ namespace SlotMachineStates
     {
         public void EnterState(SlotMachine slotMachine)
         {
-            slotMachine.SetSpinButtonInteractable(true);
-            slotMachine.SetBetInteractable(true);
+            slotMachine.SetInteractableUI(true);
         }
 
         public void UpdateState(SlotMachine slotMachine) { }
 
         public void ExitState(SlotMachine slotMachine)
         {
-            slotMachine.SetSpinButtonInteractable(false);
-            slotMachine.SetBetInteractable(false);
+            slotMachine.SetInteractableUI(false);
         }
     }
 }

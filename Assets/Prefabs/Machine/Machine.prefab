@@ -195,12 +195,7 @@ MonoBehaviour:
   _spinDuration: 1
   _delayBetweenRollsStopping: 0.2
   _paylineConfig: {fileID: 11400000, guid: 8f08b853ec53fb74b94ae5bbdbe19283, type: 2}
-  _betView: {fileID: 0}
-  _totalPayoutView: {fileID: 0}
-  _balanceView: {fileID: 0}
-  _symbolsConfig: {fileID: 11400000, guid: 7e95b8db3c1b3ae4e9a6a1aa28252e94, type: 2}
-  _paylineVisualizer: {fileID: 0}
-  _spinButton: {fileID: 2446651359978312867, guid: 40a4199acce05124690d811454f4bd59, type: 3}
+  _rollConfig: {fileID: 11400000, guid: ddeb79c9afaa3154b8360e73038e728b, type: 2}
 --- !u!1001 &3500271958343880818
 PrefabInstance:
   m_ObjectHideFlags: 0

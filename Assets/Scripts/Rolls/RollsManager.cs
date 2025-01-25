@@ -13,13 +13,9 @@ namespace Rolls
         private const int COLUMNS = 5;
         
         private readonly List<Roll> _rolls;
-        private readonly RollConfig _config;
 
         private SymbolView[,] _visibleSymbols;
         private Coroutine _spinRoutine;
-        
-        private float _delayBetweenRollsStop = 1f;
-        public float SpinDuration { get; set; } = 3f;
 
         public RollsManager(List<Roll> rolls)
         {

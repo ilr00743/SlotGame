@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &624189059859736983
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 624189059859736981}
+  - component: {fileID: 624189059859736980}
+  m_Layer: 0
+  m_Name: Bootstrap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &624189059859736981
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624189059859736983}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &624189059859736980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624189059859736983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e801198f0cf1482f93dccc514239262b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _loadingScreen: {fileID: 8622921712604829819, guid: 188775fa6e958924a8f6b5a368e0cee3, type: 3}
+  _levelUI: {fileID: 6243672517925528555, guid: d19566bfc093dcf40b66aa0e2d82f703, type: 3}
+  _paylineConfig: {fileID: 11400000, guid: 8f08b853ec53fb74b94ae5bbdbe19283, type: 2}
+  _symbolsConfig: {fileID: 11400000, guid: 7e95b8db3c1b3ae4e9a6a1aa28252e94, type: 2}
+  _betsConfig: {fileID: 11400000, guid: 9be79fbf9df4f8e49b163c89c9772d9b, type: 2}
+  _betViewPrefab: {fileID: 8930118161825065752, guid: a50c1403e5adb614aac369ef087c37c4, type: 3}
+  _slotMachinePrefab: {fileID: 1819552087660954259, guid: 4167570f1ee61e041bec94eefe4689e1, type: 3}
+  _totalPayoutViewPrefab: {fileID: 6563358263415926256, guid: ffbdc5da888e9ab4eb6dea0b0c019b6a, type: 3}
+  _balanceViewPrefab: {fileID: 4910477043196599503, guid: 85245e1431630cd4b93946b8f1fb61cc, type: 3}
+  _spinButtonPrefab: {fileID: 2446651359978312867, guid: 40a4199acce05124690d811454f4bd59, type: 3}
+  _paylineVisualizerPrefab: {fileID: 2787630631937508117, guid: 6a2c7d50ffa841b468f2bff06ead5a42, type: 3}

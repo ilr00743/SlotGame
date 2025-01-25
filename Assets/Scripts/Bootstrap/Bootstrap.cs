@@ -4,7 +4,8 @@ using System.Threading.Tasks;
 using Machine;
 using Paylines;
 using Payout;
-using RNG.Strategies;
+using RNG.Factories;
+using Services;
 using SymbolGenerators;
 using Symbols;
 using UI.Balance;
@@ -18,13 +19,16 @@ namespace Bootstrap
     {
         [SerializeField] private GameObject _loadingScreen;
         [SerializeField] private Canvas _levelUI;
-        [SerializeField] private SlotMachine _slotMachinePrefab;
+        [Space]
         [SerializeField] private PaylineConfig _paylineConfig;
+        [SerializeField] private SymbolsConfig _symbolsConfig;
+        [SerializeField] private BetsConfig _betsConfig;
+        [Space]
         [SerializeField] private BetView _betViewPrefab;
+        [SerializeField] private SlotMachine _slotMachinePrefab;
         [SerializeField] private TotalPayoutView _totalPayoutViewPrefab;
         [SerializeField] private BalanceView _balanceViewPrefab;
         [SerializeField] private SpinButtonView _spinButtonPrefab;
-        [SerializeField] private SymbolsConfig _symbolsConfig;
         [SerializeField] private PaylineVisualizer _paylineVisualizerPrefab;
 
         private async void Start()
@@ -43,42 +47,41 @@ namespace Bootstrap
         {
             var levelUI = Instantiate(_levelUI);
             
-            var betModel = new BetModel(5, 5, 100, _paylineConfig.PayLines.Count);
-            var totalPayoutModel = new TotalPayoutModel();
-            var balanceModel = new BalanceModel(currentBalance: 1000);
-            
+            var betModel = new BetModel(_betsConfig.BetStep, _betsConfig.MinBet, _betsConfig.MaxBet, _paylineConfig.PayLines.Count);
             var betView = Instantiate(_betViewPrefab, levelUI.transform);
             var betPresenter = new BetPresenter(betView, betModel);
 
+            var totalPayoutModel = new TotalPayoutModel();
             var totalPayoutView = Instantiate(_totalPayoutViewPrefab, levelUI.transform);
             var totalPayoutController = new TotalPayoutController(totalPayoutModel, totalPayoutView);
 
+            var balanceModel = new BalanceModel(currentBalance: 100);
             var balanceView = Instantiate(_balanceViewPrefab, levelUI.transform);
             var balanceController = new BalanceController(balanceModel, balanceView);
             
             var spinButton = Instantiate(_spinButtonPrefab, levelUI.transform);
+            
+            var playerFinanceService = new PlayerFinanceService(balanceController, betPresenter, totalPayoutController);
+            playerFinanceService.UpdateBalanceOnly();
+            
+            var machineButtonsService = new MachineButtonsService(betPresenter, spinButton);
 
-            var randomNumberGenerator = new TimeBasedRandom(0, _symbolsConfig.Symbols.Count);
-            var symbolGenerator = new SymbolGenerator(_symbolsConfig, randomNumberGenerator);
+            // var weigths = _symbolsConfig.Symbols.Select(s => s.Weight).ToList();
+            // var randomNumberGenerator = RNGFactory.CreateWeightedRNG(weigths);
 
-            var paylineVisualizer = Instantiate(_paylineVisualizerPrefab);
-            paylineVisualizer.InitializePaylines(_paylineConfig.PayLines.ToList());
+            //var randomNumberGenerator = RNGFactory.CreateGuaranteedWinRNG(_symbolsConfig.Symbols.Count - 3);
             
             var paylineChecker = new PaylineChecker();
+            var paylineVisualizer = Instantiate(_paylineVisualizerPrefab);
+            paylineVisualizer.InitializePaylines(_paylineConfig.PayLines.ToList());
             var payoutCalculator = new PayoutCalculator(_symbolsConfig);
+            var paylineService = new PaylineService(paylineChecker, payoutCalculator, paylineVisualizer, _paylineConfig);
 
+            var randomNumberGenerator = RNGFactory.CreateBufferedCryptoRNG(0, _symbolsConfig.Symbols.Count);
+            var symbolGenerator = new SymbolGenerator(_symbolsConfig, randomNumberGenerator);
             var slotMachine = Instantiate(_slotMachinePrefab);
             
-            slotMachine.Initialize(
-                paylineChecker,
-                payoutCalculator,
-                balanceController,
-                betPresenter,
-                totalPayoutController,
-                spinButton,
-                paylineVisualizer,
-                symbolGenerator
-            );
+            slotMachine.Initialize(paylineService, playerFinanceService, machineButtonsService, symbolGenerator);
 
             await Task.CompletedTask;
         }

@@ -1,27 +1,28 @@
 ﻿using System.Collections;
 using Machine;
+using Services;
 using UnityEngine;
 
 namespace SlotMachineStates
 {
     public class StoppingState : ISlotMachineState 
     {
-        private int _currentReelIndex;
-        private float _delayBetweenReels;
-        private float _startTime;
+        private readonly PaylineService _paylineService;
+        private readonly PlayerFinanceService _playerFinanceService;
+        private readonly float _delayBetweenReels;
         private Coroutine _stoppingCoroutine;
 
-        public StoppingState(float delayBetweenReels)
+        public StoppingState(float delayBetweenReels, PlayerFinanceService playerFinanceService, PaylineService paylineService)
         {
             _delayBetweenReels = delayBetweenReels;
+            _playerFinanceService = playerFinanceService;
+            _paylineService = paylineService;
         }
 
         public void EnterState(SlotMachine slotMachine)
         {
             _stoppingCoroutine = slotMachine.StartCoroutine(StopReelsSequentially(slotMachine));
-            _startTime = 0;
-            _currentReelIndex = 0;
-            slotMachine.StopReel(_currentReelIndex);
+            slotMachine.StopReel(0);
         }
 
         public void UpdateState(SlotMachine slotMachine) { }
@@ -37,7 +38,7 @@ namespace SlotMachineStates
                 yield return new WaitForSeconds(_delayBetweenReels);
             }
             
-            slotMachine.ChangeState(new PayoutState());
+            slotMachine.ChangeState(new PayoutState(_paylineService, _playerFinanceService, slotMachine.GetVisibleSymbols()));
         }
 
         public void ExitState(SlotMachine slotMachine)
