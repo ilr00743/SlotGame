@@ -68,7 +68,6 @@ namespace Bootstrap
             
             var machineButtonsService = new MachineButtonsService(betPresenter, spinButton);
 
-
             var paylineChecker = new PaylineChecker();
             var paylineVisualizer = Instantiate(_paylineVisualizerPrefab);
             paylineVisualizer.InitializePaylines(_paylineConfig.PayLines.ToList());

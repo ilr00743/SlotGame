@@ -35,12 +35,8 @@ namespace SlotMachineStates
             
             float totalPayout = _paylineService.CalculateTotalPayout(wins, _currentBet);
             
-            if (totalPayout > 0)
-            {
-                _financeService.AddWin(totalPayout);
-            }
-
-            _financeService.UpdateFinanceDisplays();
+            _financeService.AddWin(totalPayout);
+            
             _paylineService.VisualizePaylines(
                 _paylineService.GetPaylines,
                 _visibleSymbols,
