@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e6f6bd20dbd3fa24cbb79d03e328fe88
+guid: 6d6576f82803e2c42bccb836c7030571
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -115,133 +115,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Slots_Bg_0
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 155
-        width: 1794
-        height: 1043
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 17bdb2831e7c0ae4d8e5bb28798c3225
-      internalID: 1279440186
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Slots_Bg_1
-      rect:
-        serializedVersion: 2
-        x: 1828
-        y: 416
-        width: 190
-        height: 193
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b9ee62b25fa4e4e449695946424d3578
-      internalID: -504819558
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Slots_Bg_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 443
-        height: 149
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9107166ac491d434cb18b6c7b3e4931a
-      internalID: 1905843086
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Slots_Bg_3
-      rect:
-        serializedVersion: 2
-        x: 454
-        y: 26
-        width: 92
-        height: 93
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2b6720d18902a844abc3d9d5481f1f1e
-      internalID: 1198367508
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Slots_Bg_4
-      rect:
-        serializedVersion: 2
-        x: 555
-        y: 0
-        width: 989
-        height: 152
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ce2238f54b42e334d9f0119a7a9a1dad
-      internalID: 1752284822
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Slots_Bg_5
-      rect:
-        serializedVersion: 2
-        x: 1601
-        y: 4
-        width: 295
-        height: 150
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c272d27f8455ac54687934a41d9aa1f1
-      internalID: -19523541
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -252,13 +126,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Slots_Bg_0: 1279440186
-      Slots_Bg_1: -504819558
-      Slots_Bg_2: 1905843086
-      Slots_Bg_3: 1198367508
-      Slots_Bg_4: 1752284822
-      Slots_Bg_5: -19523541
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
