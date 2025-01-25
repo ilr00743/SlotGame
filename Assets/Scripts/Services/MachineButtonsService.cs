@@ -3,7 +3,7 @@ using UI.Bets;
 
 namespace Services
 {
-    public class MachineButtonsService
+    public class MachineButtonsService : IMachineButtonsService
     {
         private readonly BetPresenter _betPresenter;
         private readonly SpinButtonView _spinButtonView;

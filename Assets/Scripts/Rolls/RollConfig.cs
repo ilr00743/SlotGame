@@ -7,6 +7,7 @@ namespace Rolls
     {
         [SerializeField] private float _spinSpeed;
         [SerializeField] private float _spinDuration;
+        [SerializeField] private float _alignmentSpeed;
         [SerializeField] private float _delayBetweenRollsStop;
         [SerializeField] private float _itemsOffset;
         [SerializeField] private int _minSymbols;
@@ -14,6 +15,7 @@ namespace Rolls
         
         public float SpinSpeed => _spinSpeed;
         public float SpinDuration => _spinDuration;
+        public float AlignmentSpeed => _alignmentSpeed;
         public float DelayBetweenRollsStop => _delayBetweenRollsStop;
         public float ItemsOffset => _itemsOffset;
         public int MinSymbols => _minSymbols;

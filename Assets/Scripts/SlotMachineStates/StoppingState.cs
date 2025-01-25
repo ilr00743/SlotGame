@@ -7,12 +7,12 @@ namespace SlotMachineStates
 {
     public class StoppingState : ISlotMachineState 
     {
-        private readonly PaylineService _paylineService;
-        private readonly PlayerFinanceService _playerFinanceService;
+        private readonly IPaylineService _paylineService;
+        private readonly IPlayerFinanceService _playerFinanceService;
         private readonly float _delayBetweenReels;
         private Coroutine _stoppingCoroutine;
 
-        public StoppingState(float delayBetweenReels, PlayerFinanceService playerFinanceService, PaylineService paylineService)
+        public StoppingState(float delayBetweenReels, IPlayerFinanceService playerFinanceService, IPaylineService paylineService)
         {
             _delayBetweenReels = delayBetweenReels;
             _playerFinanceService = playerFinanceService;
@@ -29,14 +29,18 @@ namespace SlotMachineStates
 
         private IEnumerator StopReelsSequentially(SlotMachine slotMachine)
         {
+            var delayBetweenReels = new WaitForSeconds(_delayBetweenReels);
             for (int i = 0; i < slotMachine.RollsCount; i++)
             {
                 slotMachine.StopReel(i);
                 
                 yield return slotMachine.WaitForReelToAlign(i);
                 
-                yield return new WaitForSeconds(_delayBetweenReels);
+                yield return delayBetweenReels;
             }
+
+            //need to prevent not adjusted paylines
+            yield return new WaitForSeconds(0.5f);
             
             slotMachine.ChangeState(new PayoutState(_paylineService, _playerFinanceService, slotMachine.GetVisibleSymbols()));
         }

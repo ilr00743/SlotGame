@@ -11,11 +11,13 @@ namespace Rolls
     public class Roll : MonoBehaviour
     {
         [SerializeField] private SymbolsConfig _symbolsConfig;
+        [SerializeField] private RollConfig _rollConfig;
         [SerializeField] private SymbolView _symbolPrefab;
         [SerializeField] private Transform _reelBottomBoundary;
         [SerializeField] private Transform _firstSymbolPosition;
-        [SerializeField] private float _spinSpeed = 3f;
-        [SerializeField] private float _itemsOffset = 4f;
+        private float _spinSpeed;
+        private float _itemsOffset;
+        private float _alignmentSpeed;
 
         public bool IsAligning => _centerItemsOnScreen;
         
@@ -30,9 +32,18 @@ namespace Rolls
         {
             var initialSymbolCount = Random.Range(minSymbolCount, maxSymbolCount);
             
+            _spinSpeed = _rollConfig.SpinSpeed;
+            _itemsOffset = _rollConfig.ItemsOffset;
+            _alignmentSpeed = _rollConfig.AlignmentSpeed;
+            
             _symbolGenerator = symbolGenerator;
             _symbols = new List<SymbolView>();
 
+            InitializeSymbols(initialSymbolCount);
+        }
+
+        private void InitializeSymbols(int initialSymbolCount)
+        {
             for (int i = 0; i < initialSymbolCount; i++)
             {
                 var symbolView = Instantiate(_symbolPrefab, transform);
@@ -43,7 +54,7 @@ namespace Rolls
                 _symbols.Add(symbolView);
             }
         }
-        
+
         public void StartSpin()
         {
             _isSpinning = true;
@@ -116,7 +127,6 @@ namespace Rolls
             if (!_centerItemsOnScreen) return;
             
             bool allAligned = true;
-            float alignmentSpeed = 20f;
 
             for (int i = 0; i < _symbols.Count; i++)
             {
@@ -124,7 +134,7 @@ namespace Rolls
                 _symbols[i].transform.localPosition = Vector3.Lerp(
                     _symbols[i].transform.localPosition,
                     targetPosition,
-                    alignmentSpeed * Time.deltaTime
+                    _alignmentSpeed * Time.deltaTime
                 );
 
                 if (Vector3.Distance(_symbols[i].transform.localPosition, targetPosition) > 0.01f)
@@ -138,22 +148,5 @@ namespace Rolls
                 _centerItemsOnScreen = false; // Вирівнювання завершено
             }
         }
-        
-        /*private void AlignSymbols()
-        {
-            if (_centerItemsOnScreen)
-            {
-                Vector3 localPosition = Vector3.zero;
-                for (int i = 0; i < _symbols.Count; ++i)
-                {
-                    localPosition = Vector3.up * _firstSymbolPosition.localPosition.y + (i * GetSpaceBetweenSymbols());
-                    _symbols[i].transform.localPosition = Vector3.Lerp(_symbols[i].transform.localPosition, localPosition, 40f * Time.deltaTime );
-                }
-                if (_symbols[^1] && Mathf.Abs(_symbols[^1].transform.localPosition.y - localPosition.y) < 0.01f)
-                {
-                    _centerItemsOnScreen = false;
-                }
-            }
-        }*/
     }
 }

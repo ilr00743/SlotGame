@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spinSpeed: 30
   _spinDuration: 3
-  _delayBetweenRollsStop: 0.5
-  _itemsOffset: 4
+  _alignmentSpeed: 20
+  _delayBetweenRollsStop: 0.3
+  _itemsOffset: 3
   _minSymbols: 5
   _maxSymbols: 10

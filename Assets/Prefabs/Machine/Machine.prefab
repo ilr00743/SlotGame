@@ -110,8 +110,8 @@ Transform:
   m_GameObject: {fileID: 2493133945150510951}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.9, z: 0}
-  m_LocalScale: {x: 0.698148, y: 0.698148, z: 0.698148}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.65, y: 0.65, z: 0.65}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2493133946408291033}
   - {fileID: 8197791674359869898}
@@ -192,9 +192,6 @@ MonoBehaviour:
   - {fileID: 5719295748051357021}
   - {fileID: 819301246140567110}
   - {fileID: 8537361840697776325}
-  _spinDuration: 1
-  _delayBetweenRollsStopping: 0.2
-  _paylineConfig: {fileID: 11400000, guid: 8f08b853ec53fb74b94ae5bbdbe19283, type: 2}
   _rollConfig: {fileID: 11400000, guid: ddeb79c9afaa3154b8360e73038e728b, type: 2}
 --- !u!1001 &3500271958343880818
 PrefabInstance:

@@ -8,14 +8,14 @@ namespace SlotMachineStates
 {
     public class PayoutState : ISlotMachineState
     {
-        private readonly PaylineService _paylineService;
-        private readonly PlayerFinanceService _financeService;
+        private readonly IPaylineService _paylineService;
+        private readonly IPlayerFinanceService _financeService;
         private readonly SymbolView[,] _visibleSymbols;
         private readonly int _currentBet;
 
         public PayoutState(
-            PaylineService paylineService,
-            PlayerFinanceService financeService,
+            IPaylineService paylineService,
+            IPlayerFinanceService financeService,
             SymbolView[,] visibleSymbols
             )
         {

@@ -4,13 +4,11 @@ using UI.TotalPayout;
 
 namespace Services
 {
-    public class PlayerFinanceService
+    public class PlayerFinanceService : IPlayerFinanceService
     {
         private readonly BalanceController _balanceController;
         private readonly BetPresenter _betPresenter;
         private readonly TotalPayoutController _totalPayoutController;
-
-        public bool IsNotEnoughMoney => Balance < CurrentBet;
 
         public PlayerFinanceService(
             BalanceController balanceController,
@@ -26,6 +24,8 @@ namespace Services
         public int ActivePaylinesCount => _betPresenter.GetActivePaylinesCount();
 
         public int CurrentBet => _betPresenter.GetBet();
+        public bool IsNotEnoughMoney => Balance < CurrentBet;
+
         public void PlaceBet()
         {
             float bet = _betPresenter.GetBet();

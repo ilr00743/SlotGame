@@ -6,7 +6,7 @@ using Symbols;
 
 namespace Services
 {
-    public class PaylineService
+    public class PaylineService : IPaylineService
     {
         private readonly PaylineChecker _paylineChecker;
         private readonly PayoutCalculator _payoutCalculator;

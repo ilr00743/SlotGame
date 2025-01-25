@@ -6,12 +6,12 @@ namespace SlotMachineStates
 {
     public class SpinningState : ISlotMachineState
     {
-        private readonly PaylineService _paylineService;
-        private readonly PlayerFinanceService _playerFinanceService;
+        private readonly IPaylineService _paylineService;
+        private readonly IPlayerFinanceService _playerFinanceService;
         private readonly float _spinDuration;
         private float _elapsedTime;
         
-        public SpinningState(float spinDuration, PaylineService paylineService, PlayerFinanceService playerFinanceService)
+        public SpinningState(float spinDuration, IPaylineService paylineService, IPlayerFinanceService playerFinanceService)
         {
             _spinDuration = spinDuration;
             _paylineService = paylineService;

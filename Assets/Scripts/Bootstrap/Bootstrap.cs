@@ -66,17 +66,18 @@ namespace Bootstrap
             
             var machineButtonsService = new MachineButtonsService(betPresenter, spinButton);
 
-            // var weigths = _symbolsConfig.Symbols.Select(s => s.Weight).ToList();
-            // var randomNumberGenerator = RNGFactory.CreateWeightedRNG(weigths);
 
-            //var randomNumberGenerator = RNGFactory.CreateGuaranteedWinRNG(_symbolsConfig.Symbols.Count - 3);
-            
             var paylineChecker = new PaylineChecker();
             var paylineVisualizer = Instantiate(_paylineVisualizerPrefab);
             paylineVisualizer.InitializePaylines(_paylineConfig.PayLines.ToList());
             var payoutCalculator = new PayoutCalculator(_symbolsConfig);
             var paylineService = new PaylineService(paylineChecker, payoutCalculator, paylineVisualizer, _paylineConfig);
 
+            // var weigths = _symbolsConfig.Symbols.Select(s => s.Weight).ToList();
+            // var randomNumberGenerator = RNGFactory.CreateWeightedRNG(weigths);
+
+            //var randomNumberGenerator = RNGFactory.CreateGuaranteedWinRNG(_symbolsConfig.Symbols.Count - 3);
+            
             var randomNumberGenerator = RNGFactory.CreateBufferedCryptoRNG(0, _symbolsConfig.Symbols.Count);
             var symbolGenerator = new SymbolGenerator(_symbolsConfig, randomNumberGenerator);
             var slotMachine = Instantiate(_slotMachinePrefab);

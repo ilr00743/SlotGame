@@ -16,18 +16,18 @@ namespace Machine
 
         private RollsManager _rollsManager;
         private ISlotMachineState _currentState;
-        private PaylineService _paylineService;
-        private PlayerFinanceService _playerFinanceService;
-        private MachineButtonsService _machineButtonsService;
+        private IPaylineService _paylineService;
+        private IPlayerFinanceService _playerFinanceService;
+        private IMachineButtonsService _machineButtonsService;
         
         public int RollsCount => _rolls.Count;
         public RollConfig RollConfig => _rollConfig;
         public SymbolView[,] GetVisibleSymbols() => _rollsManager.GetVisibleSymbols();
 
         public void Initialize(
-            PaylineService paylineService,
-            PlayerFinanceService playerFinanceService,  
-            MachineButtonsService machineButtonsService,
+            IPaylineService paylineService,
+            IPlayerFinanceService playerFinanceService,  
+            IMachineButtonsService machineButtonsService,
             ISymbolGenerator symbolGenerator)
         {
             _paylineService = paylineService;
@@ -37,6 +37,7 @@ namespace Machine
             InitializeRolls(symbolGenerator);
 
             _machineButtonsService.AddListenerOnSpin(Spin);
+            _paylineService.HideAllPaylines();
             ChangeState(new IdleState());
         }
 
