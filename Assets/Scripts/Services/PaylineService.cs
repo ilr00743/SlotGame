@@ -33,7 +33,8 @@ namespace Services
 
             for (int i = 0; i < activePaylinesCount; i++)
             {
-                if (i >= _paylineConfig.PayLines.Count) break;
+                if (i >= _paylineConfig.PayLines.Count) 
+                    break;
 
                 var payline = _paylineConfig.PayLines[i];
                 var matchResult = _paylineChecker.GetPaylineMatches(visibleSymbols, payline.PositionsArray);
@@ -47,14 +48,14 @@ namespace Services
             return wins;
         }
         
-        public float CalculateTotalPayout(List<(SymbolView, int)> wins, int bet)
+        public float CalculateTotalPayout(List<(SymbolView, int)> symbolMatches, int bet)
         {
-            return _payoutCalculator.CalculateTotalPayout(wins, bet);
+            return _payoutCalculator.CalculateTotalPayout(symbolMatches, bet);
         }
         
-        public void VisualizePaylines(List<Payline> paylines, SymbolView[,] visibleSymbols, List<(SymbolView, int)> wins, int activePaylinesCount)
+        public void VisualizePaylines(List<Payline> paylines, SymbolView[,] visibleSymbols, List<(SymbolView, int)> symbolsMatches, int activePaylinesCount)
         {
-            _paylineVisualizer.UpdatePaylines(paylines, visibleSymbols, wins, activePaylinesCount);
+            _paylineVisualizer.UpdatePaylines(paylines, visibleSymbols, symbolsMatches, activePaylinesCount);
         }
 
         public void HideAllPaylines()
